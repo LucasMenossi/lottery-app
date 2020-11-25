@@ -7,7 +7,7 @@ import Register from './components/Register/Register'
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter basename='/'>
         <Switch>
           <Route exact path="/" component={Authentication} />
           <Route path="/resetPass" component={ResetPassword} />
