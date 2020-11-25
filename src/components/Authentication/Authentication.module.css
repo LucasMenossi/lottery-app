@@ -1,0 +1,107 @@
+.Page {
+   display: flex;
+   flex-direction: row;
+   flex: 1;
+   color: #707070;
+   border-bottom: 2px solid #EBEBEB;
+}
+  
+.Titlebox {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+  
+.Titlebox h1 {
+    font-size: 65px;
+    padding: 0;
+    margin: 0;
+    font: italic bold 65px Helvetica;
+}
+  
+.Titlebox h2 {
+    background-color:#B5C401;
+    border-radius: 30px;
+    padding: 10px;
+    width: 100px;
+    margin: 0;
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font: italic normal bold 22px Helvetica;
+}
+  
+.Titlebox h3 {
+    margin: 0;
+    padding: 0;
+    font: italic bold 83px Helvetica;
+}
+  
+.LoginBox {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+.LoginBox h4 {
+    font: italic bold 35px Helvetica;
+}
+  
+.LoginInputsContiner {
+    box-shadow: 0px 0px 50px -17px rgba(0,0,0,0.53);
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+  
+.LoginInputBox {
+    padding: 40px;
+    border-bottom: 2px solid #EBEBEB;
+    width: 337px;
+}
+  
+.LoginInput {
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    font: italic normal bold 17px Helvetica;
+    color: #9D9D9D;
+}
+  
+.ForgetButton {
+    border: none;
+    overflow: visible;
+    background-color: transparent;
+    font: italic normal normal 17px Helvetica;
+    color: #C1C1C1;
+    padding: 30px;
+    cursor: pointer;
+}
+  
+  .LoginButton {
+    display: flex;
+    border: none;
+    overflow: visible;
+    background-color: transparent;
+    color: #B5C401;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    font: italic normal bold 35px Helvetica;
+  }
+  
+  .RegisterButton {
+    display: flex;
+    border: none;
+    overflow: visible;
+    background-color: transparent;
+    color: #707070;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font: italic normal bold 35px Helvetica;
+    cursor: pointer;
+  }
