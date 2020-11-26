@@ -166,10 +166,13 @@
 }
 
 @media (max-width: 800px) {
-    .Filter {
+    .Filter{
         flex-direction: column;
         align-items: center;
         margin: 0;
+    }
+    .Filter h2, h4 {
+        margin-right: 0 !important; 
     }
     .RecentGames {
         flex-direction: column;

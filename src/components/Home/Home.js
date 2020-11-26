@@ -13,7 +13,7 @@ const Home = ({ clickedGame, setClickedGame, copyArr, setCopyArr, showHome, setS
             <div className={classes.Box}></div>
             <div className={classes.RecentGames}>
                 <div className={classes.Filter}>
-                    <h2>Recent games</h2>
+                    <h2>RECENT GAMES</h2>
                     <h4>Filters</h4>
                     <div>
                         <button onClick={() => setClickedGame("Lotofácil")} className={clickedGame !== "Lotofácil" ? classes.Lotofacil : classes.LotofacilClicked}><p className={clickedGame !== "Lotofácil" ? classes.TxtLotofacil : classes.TxtClicked}>Lotofácil</p></button>
@@ -32,10 +32,10 @@ const Home = ({ clickedGame, setClickedGame, copyArr, setCopyArr, showHome, setS
                 <div style={{ display: "flex", flex: 1, justifyContent: "center" }}>
                     <div className={classes.GameArea}>
                         {copyArr.length === 0 ?
-                            <p className={classes.Message}>Nenhum item adicionada até o momento.</p>
+                            <p className={classes.Message}>No items added so far.</p>
                             :
                             <div style={{ display: "flex", flexDirection: "column" }}>
-                                {clickedGame !== '' && copyArr.filter(item => clickedGame === item.type).length === 0 ? <p className={classes.Message}>Nenhum item encontrado para {clickedGame}.</p> : null}
+                                {clickedGame !== '' && copyArr.filter(item => clickedGame === item.type).length === 0 ? <p className={classes.Message}>No items found for {clickedGame}.</p> : null}
                                 {clickedGame !== '' ? copyArr.filter(item => clickedGame === item.type).map(value => {
                                     console.log("Valor: ", value);
                                     return value === "" ? null : <ItemResult item={value} />
