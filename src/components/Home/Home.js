@@ -9,8 +9,7 @@ const Home = ({ clickedGame, setClickedGame, copyArr, setCopyArr, showHome, setS
         setClickedGame('');
     }
     return (
-        <div style={{ display: "flex", flexDirection: "column", flex: '1 0 auto' }}>
-            <div className={classes.Box}></div>
+        <div style={{ display: "flex", flexDirection: "column", flex: '.8 0 auto', justifyContent: "center" }}>
             <div className={classes.RecentGames}>
                 <div className={classes.Filter}>
                     <h2>Recent games</h2>
@@ -21,7 +20,7 @@ const Home = ({ clickedGame, setClickedGame, copyArr, setCopyArr, showHome, setS
                         <button onClick={() => setClickedGame("Quina")} className={clickedGame !== "Quina" ? classes.Quina : classes.QuinaClicked}><p className={clickedGame !== "Quina" ? classes.TxtQuina : classes.TxtClicked}>Quina</p></button>
                     </div>
                 </div>
-                <div style={{ display: "flex", flex: 1, justifyContent: "flex-end", alignItems: "center" }}>
+                <div style={{ display: "flex", flex: .34, alignItems: "center" }}>
                     <button onClick={() => resetChoices()} className={classes.NewBet}>
                         New bet
                                 <BiRightArrowAlt style={{ width: 40, height: 48 }} />
@@ -30,12 +29,12 @@ const Home = ({ clickedGame, setClickedGame, copyArr, setCopyArr, showHome, setS
             </div>
             <div style={{ display: "flex" }}>
                 <div style={{ display: "flex", flex: 1, justifyContent: "center" }}>
-                    <div style={{display: "flex", flex: 1, justifyContent: "center"}}>
+                    <div style={{display: "flex", flex: 1}}>
                         {copyArr.length === 0 ?
-                            <p>Nenhum item adicionada até o momento</p>
+                            <p className={classes.Message}>Nenhum item adicionada até o momento.</p>
                             :
                             <div style={{ display: "flex", flexDirection: "column" }}>
-                                {clickedGame !== '' && copyArr.filter(item => clickedGame === item.type).length === 0 ? <p>Nenhum item encontrado para {clickedGame}</p> : null}
+                                {clickedGame !== '' && copyArr.filter(item => clickedGame === item.type).length === 0 ? <p className={classes.Message}>Nenhum item encontrado para {clickedGame}.</p> : null}
                                 {clickedGame !== '' ? copyArr.filter(item => clickedGame === item.type).map(value => {
                                     console.log("Valor: ", value);
                                     return value === "" ? null : <ItemResult item={value} />

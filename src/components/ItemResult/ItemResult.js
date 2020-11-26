@@ -5,7 +5,7 @@ import moment from 'moment'
 const ItemResult = ({ item }) => {
 
     return (
-        <div style={{ display: "flex", flexDirection: "row", margin: 10 }}>
+        <div style={{ display: "flex", flexDirection: "row", marginBottom: 10, width: 380 }}>
             <div style={{ backgroundColor: types.find(value => value.type === item.type).color }} className={classes.DivItem}>
             </div>
             <div style={{ display: "flex", flexDirection: "column", margin: 10 }}>

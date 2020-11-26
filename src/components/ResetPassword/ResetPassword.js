@@ -3,10 +3,21 @@ import Footer from '../Footer'
 import classes from './ResetPassword.module.css'
 import { BiRightArrowAlt, BiLeftArrowAlt } from 'react-icons/bi'
 import { Link, useHistory } from 'react-router-dom';
+import NameApp from '../NameApp/NameApp';
 
 const ResetPassword = () => {
     let history = useHistory();
     const [email, setEmail] = useState('')
+    const [emptyValue, setEmptyValue] = useState(false);
+
+    const checkFields = () => {
+        if(email !== ''){
+            setEmptyValue(false)
+            history.push("/")
+        } else {
+            setEmptyValue(true)
+        }
+    }
 
     return (
         <div style={{
@@ -14,21 +25,16 @@ const ResetPassword = () => {
             height: '100vh'
         }}>
             <div className={classes.Page}>
-                <div className={classes.Titlebox}>
-                    <h1>The</h1>
-                    <h1>Greatest</h1>
-                    <h1>App</h1>
-                    <h2>for</h2>
-                    <h3>LOTTERY</h3>
-                </div>
+                <NameApp />
                 <div className={classes.LoginBox}>
                     <h4>Authentication</h4>
                     <div className={classes.LoginInputsContiner}>
                         <div className={classes.LoginInputBox}>
                             <input value={email} onChange={({ target: { value } }) => setEmail(value)} className={classes.LoginInput} placeholder="Email" />
                         </div>
+                        {emptyValue ? <p style={{display: "flex", justifyContent: "center", color: "red"}}>*Email is required.</p> : null}
                         <div style={{ display: "flex", justifyContent: 'center' }}>
-                            <button className={classes.LoginButton} onClick={() => email !== '' ? history.push("/") : null}>
+                            <button className={classes.LoginButton} onClick={() => checkFields()}>
                                 Send Link
                                 <BiRightArrowAlt style={{ height: 40, width: 48 }} />
                             </button>

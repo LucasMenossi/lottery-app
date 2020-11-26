@@ -4,6 +4,7 @@ import classes from './Authentication.module.css'
 import { BiRightArrowAlt } from 'react-icons/bi'
 import { Link, Redirect, useHistory } from 'react-router-dom'
 import { login } from '../../api/api'
+import NameApp from '../NameApp/NameApp'
 
 const Authentication = () => {
     let history = useHistory()
@@ -32,13 +33,7 @@ const Authentication = () => {
             height: '100vh'
         }}>
             <div className={classes.Page}>
-                <div className={classes.Titlebox}>
-                    <h1>The</h1>
-                    <h1>Greatest</h1>
-                    <h1>App</h1>
-                    <h2>for</h2>
-                    <h3>LOTTERY</h3>
-                </div>
+                <NameApp />
                 <div className={classes.LoginBox}>
                     <h4>Authentication</h4>
                     <div className={classes.LoginInputsContiner}>
@@ -48,8 +43,8 @@ const Authentication = () => {
                         <div className={classes.LoginInputBox}>
                             <input value={password} type="password" onChange={({ target: { value } }) => setPassword(value)} className={classes.LoginInput} placeholder="Password" />
                         </div>
-                        {emptyValue ? <p style={{display: "flex", justifyContent: "center", color: "red"}}>*Ambos os campos devem ser preenchidos</p> : null}
-                        {loginError ? <p style={{display: "flex", justifyContent: "center", color: "red"}}>*Email ou senha incorretos</p> : null}
+                        {emptyValue ? <p style={{display: "flex", justifyContent: "center", color: "red"}}>*Both fields are required.</p> : null}
+                        {loginError ? <p style={{display: "flex", justifyContent: "center", color: "red"}}>*Wrong email or password.</p> : null}
                         <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
                             <Link to="resetPass">
                                 <button className={classes.ForgetButton}>I forgot my password</button>

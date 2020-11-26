@@ -20,8 +20,8 @@ function SelectGame() {
             height: '100vh'
         }}>
             <div className={classes.Page}>
-                <Header showHome={showHome} />
-                <div>
+                <Header showHome={showHome} setShowHome={setShowHome} />
+                <div style ={{display: "flex", flex: 1, justifyContent: "center"}}>
                     {showHome ?
                         <Home clickedGame={clickedGame} setClickedGame={setClickedGame} copyArr={copyArr} setCopyArr={setCopyArr} showHome={showHome} setShowHome={setShowHome} />
                         :
@@ -34,7 +34,7 @@ function SelectGame() {
                 </div>
             </div>
             <Footer />
-        </div>
+        </div >
     );
 }
 

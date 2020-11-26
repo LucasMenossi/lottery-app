@@ -3,6 +3,7 @@ import Footer from '../Footer'
 import classes from './Register.module.css'
 import { BiRightArrowAlt, BiLeftArrowAlt } from 'react-icons/bi';
 import { Link, useHistory } from 'react-router-dom'
+import NameApp from '../NameApp/NameApp';
 
 const Register = () => {
     let history = useHistory()
@@ -26,13 +27,7 @@ const Register = () => {
             height: '100vh'
         }}>
             <div className={classes.Page}>
-                <div className={classes.Titlebox}>
-                    <h1>The</h1>
-                    <h1>Greatest</h1>
-                    <h1>App</h1>
-                    <h2>for</h2>
-                    <h3>LOTTERY</h3>
-                </div>
+                <NameApp />
                 <div className={classes.LoginBox}>
                     <h4>Authentication</h4>
                     <div className={classes.LoginInputsContiner}>
@@ -45,7 +40,7 @@ const Register = () => {
                         <div className={classes.LoginInputBox}>
                             <input value={password} type="password" onChange={({ target: { value } }) => setPassword(value)} className={classes.LoginInput} placeholder="Password" />
                         </div>
-                        {emptyValue ? <p style={{display: "flex", justifyContent: "center", color: "red"}}>*Todos os campos devem ser preenchidos</p> : null}
+                        {emptyValue ? <p style={{display: "flex", justifyContent: "center", color: "red"}}>*All fields are required.</p> : null}
                         <div style={{ display: "flex", justifyContent: 'center' }}>
                             <button className={classes.LoginButton} onClick={() => checkFields()}>
                                 Register

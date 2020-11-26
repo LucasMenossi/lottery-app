@@ -29,7 +29,6 @@
 
 .Box {
     top: 15px;
-    margin-left: 120px;
     width: 100px;
     height: 7px;
     background: #B5C401 0% 0% no-repeat padding-box;
@@ -75,25 +74,52 @@
     flex: 1;
     flex-direction: column;
     justify-content: center;
-    margin-left: 140px;
 }
 
 .BetsBody {
     display: flex;
+    justify-content: center;
+    flex: 1
+}
+
+.BetsPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    flex: .88 
+}
+
+.CartPage {
+    display: flex;
+    flex: .93;
+    flex-direction: column;
+    margin-left: 40px;
 }
 
 @media (max-width: 1200px) {
     .Bets {
-        margin-left: 10px;
+        margin-left: 20px;
+    }
+    .Box {
+        margin-left: 40px;
     }
     .BetsBody {
         flex-direction: column;
     }
+    .BetsPage {
+        margin-left: 10px;
+    }
 }
 
-@media (max-width: 800px) {
-    .Box {
-        margin-left: 10px !important;
+@media (max-width: 1200px) {
+    .Cart {
+        width: 400px !important;
+    }
+    .SaveArea {
+        width: 400px !important;
+    }
+    .CartPage {
+        margin-left: 0px;
     }
 }
 
@@ -126,7 +152,7 @@
     border: 2px solid #7F3992;
     border-radius: 100px;
     opacity: 1;
-    margin: 10px;
+    margin-right: 10px;
 }
 
 .LotofacilClicked {
@@ -138,7 +164,7 @@
     border: 2px solid #7F3992;
     border-radius: 100px;
     opacity: 1;
-    margin: 10px;
+    margin-right: 10px;
 }
 
 .TxtLotofacil {
@@ -272,7 +298,6 @@
     margin-bottom: 20px;
     font: italic normal bold 24px Helvetica;
     cursor: pointer;
-    margin-right: 200px;
 }
 
 .CartTotalTxt {

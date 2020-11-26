@@ -18,7 +18,7 @@ const GamesList = ({ clickedGame, setClickedGame, copyArr, setCopyArr, selectedG
         setShowHome(true)
     }
     return (
-        <div style={{ display: "flex", flexDirection: "column", flex: '1' }}>
+        <div className={classes.BetsPage}>
             <div className={classes.Box}></div>
             <div className={classes.BetsBody}>
                 <div className={classes.Bets}>
@@ -38,7 +38,7 @@ const GamesList = ({ clickedGame, setClickedGame, copyArr, setCopyArr, selectedG
                         setTotalPrice={setTotalPrice}
                     />
                 </div>
-                <div style={{ display: "flex", flex: 1, flexDirection: "column" }}>
+                <div className={classes.CartPage}>
                     <div className={classes.Cart} style={{ marginTop: 40 }}>
                         <h3 className={classes.CartTxt}>Cart</h3>
                         <div style={{ display: "flex", flexDirection: "column", marginTop: 80, marginLeft: -90 }}>
