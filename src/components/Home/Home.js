@@ -10,6 +10,7 @@ const Home = ({ clickedGame, setClickedGame, copyArr, setCopyArr, showHome, setS
     }
     return (
         <div style={{ display: "flex", flexDirection: "column", flex: '.8 0 auto', justifyContent: "center" }}>
+            <div className={classes.Box}></div>
             <div className={classes.RecentGames}>
                 <div className={classes.Filter}>
                     <h2>Recent games</h2>
@@ -20,7 +21,7 @@ const Home = ({ clickedGame, setClickedGame, copyArr, setCopyArr, showHome, setS
                         <button onClick={() => setClickedGame("Quina")} className={clickedGame !== "Quina" ? classes.Quina : classes.QuinaClicked}><p className={clickedGame !== "Quina" ? classes.TxtQuina : classes.TxtClicked}>Quina</p></button>
                     </div>
                 </div>
-                <div style={{ display: "flex", flex: .34, alignItems: "center" }}>
+                <div className={classes.NewBetArea}>
                     <button onClick={() => resetChoices()} className={classes.NewBet}>
                         New bet
                                 <BiRightArrowAlt style={{ width: 40, height: 48 }} />
@@ -29,7 +30,7 @@ const Home = ({ clickedGame, setClickedGame, copyArr, setCopyArr, showHome, setS
             </div>
             <div style={{ display: "flex" }}>
                 <div style={{ display: "flex", flex: 1, justifyContent: "center" }}>
-                    <div style={{display: "flex", flex: 1}}>
+                    <div className={classes.GameArea}>
                         {copyArr.length === 0 ?
                             <p className={classes.Message}>Nenhum item adicionada até o momento.</p>
                             :
@@ -43,7 +44,6 @@ const Home = ({ clickedGame, setClickedGame, copyArr, setCopyArr, showHome, setS
                                 })}
                             </div>}
                     </div>
-                    <div style={{display: "flex", flex: 2}}></div>
                 </div>
             </div>
         </div>

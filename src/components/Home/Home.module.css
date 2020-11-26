@@ -15,7 +15,6 @@
 
 .Box {
     top: 15px;
-    margin-left: 120px;
     width: 100px;
     height: 7px;
     background: #B5C401 0% 0% no-repeat padding-box;
@@ -161,6 +160,11 @@
     flex: .8;
 }
 
+.GameArea {
+    display: flex;
+    flex: 1;
+}
+
 @media (max-width: 800px) {
     .Filter {
         flex-direction: column;
@@ -172,6 +176,12 @@
     }
     .Box {
         margin-left: 10px !important;
+    }
+    .NewBetArea {
+        justify-content: center;
+    }
+    .GameArea {
+        justify-content: center;
     }
 }
 
@@ -205,6 +215,12 @@
     margin-bottom: 20px;
     font: italic normal bold 24px Helvetica;
     cursor: pointer;
+}
+
+.NewBetArea {
+    display: flex;
+    flex: .34;
+    align-items: "center"
 }
 
 .CartTotalTxt {
