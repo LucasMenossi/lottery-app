@@ -9,10 +9,20 @@ const Authentication = () => {
     let history = useHistory()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [loginError, setLoginError] = useState(false);
+    const [emptyValue, setEmptyValue] = useState(false);
 
     const checkData = () => {
         if(email === login.email && password === login.password) {
+            setLoginError(false)
+            setEmptyValue(false)
             history.push("/selectGame")
+        } else if (email === '' || password === '') {
+            setEmptyValue(true)
+            setLoginError(false)
+        } else {
+            setEmptyValue(false)
+            setLoginError(true)
         }
     }
 
@@ -38,6 +48,8 @@ const Authentication = () => {
                         <div className={classes.LoginInputBox}>
                             <input value={password} type="password" onChange={({ target: { value } }) => setPassword(value)} className={classes.LoginInput} placeholder="Password" />
                         </div>
+                        {emptyValue ? <p style={{display: "flex", justifyContent: "center", color: "red"}}>*Ambos os campos devem ser preenchidos</p> : null}
+                        {loginError ? <p style={{display: "flex", justifyContent: "center", color: "red"}}>*Email ou senha incorretos</p> : null}
                         <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
                             <Link to="resetPass">
                                 <button className={classes.ForgetButton}>I forgot my password</button>

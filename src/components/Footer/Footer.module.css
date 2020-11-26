@@ -1,4 +1,7 @@
 .Footer {
     color: #707070;
     font: normal normal normal 15px Helvetica;
+    flex-shrink: 0;
+    width: 100vw;
+    border-top: 2px solid #EBEBEB
 }

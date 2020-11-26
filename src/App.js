@@ -1,5 +1,5 @@
 import './App.css';
-import SelectGame from './components/SelectGame/SelectGame'
+import SelectGame from './components/Controller/SelectGame'
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import Authentication from './components/Authentication/Authentication'
 import ResetPassword from './components/ResetPassword/ResetPassword'

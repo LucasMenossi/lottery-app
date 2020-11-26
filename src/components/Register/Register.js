@@ -9,10 +9,15 @@ const Register = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [emptyValue, setEmptyValue] = useState(false)
 
     const checkFields = () => {
-        if(name !== '' && email !== '' && password !== '')
+        if(name !== '' && email !== '' && password !== ''){
+            setEmptyValue(false)
             history.push("/")
+        } else {
+            setEmptyValue(true)
+        }
     }
 
     return (
@@ -40,6 +45,7 @@ const Register = () => {
                         <div className={classes.LoginInputBox}>
                             <input value={password} type="password" onChange={({ target: { value } }) => setPassword(value)} className={classes.LoginInput} placeholder="Password" />
                         </div>
+                        {emptyValue ? <p style={{display: "flex", justifyContent: "center", color: "red"}}>*Todos os campos devem ser preenchidos</p> : null}
                         <div style={{ display: "flex", justifyContent: 'center' }}>
                             <button className={classes.LoginButton} onClick={() => checkFields()}>
                                 Register

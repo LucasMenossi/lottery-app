@@ -5,10 +5,7 @@ import { types } from '../../api/api'
 const Item = ({ item, cartValues, setCartValues, totalPrice, setTotalPrice }) => {
 
     const removeItem = () => {
-        //console.log("Item been received: ", item);
-        console.log("CartValues: ", cartValues);
         setCartValues(cartValues.filter(value => value !== item));
-        console.log("Price: ", cartValues.filter(value => value === item).map(valor => valor.price));
         setTotalPrice(totalPrice - cartValues.filter(value => value === item).map(valor => valor.price))
     }
 

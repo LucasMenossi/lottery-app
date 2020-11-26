@@ -1,0 +1,275 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #707070;
+    height: 80px;
+    border-bottom: 2px solid #EBEBEB;
+}
+
+.Page {
+    flex-direction: row;
+    flex: 1;
+}
+
+.Navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Navigation button {
+    border: none;
+    overflow: visible;
+    background-color: transparent;
+    font: italic normal bold 20px Helvetica;
+    color: #707070;
+}
+
+.Box {
+    top: 15px;
+    margin-left: 141px;
+    width: 166px;
+    height: 7px;
+    background: #B5C401 0% 0% no-repeat padding-box;
+    border-radius: 6px;
+    opacity: 1;
+}
+
+.BetText {
+    top: 0px;
+    left: 0.1959991455078125px;
+    height: 28px;
+    font: italic normal bold 24px/85px Helvetica;
+    letter-spacing: 0px;
+    color: #707070;
+    text-transform: uppercase;
+}
+
+.GameText {
+    top: 0px;
+    left: 118px;
+    width: 190px;
+    height: 28px;
+    text-align: center;
+    font: italic normal 300 24px/85px Helvetica;
+    letter-spacing: 0px;
+    color: #707070;
+    text-transform: uppercase;
+}
+
+.ChooseGame {
+    top: 212px;
+    left: 130px;
+    width: 126px;
+    text-align: left;
+    font: italic normal bold 17px/70px Helvetica;
+    letter-spacing: 0px;
+    color: #868686;
+    opacity: 1;
+}
+
+.Bets {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Cart {
+    display: flex;
+    width: 500px;
+    min-height: 300px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-top: 2px solid #E2E2E2;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.CartTxt {
+    text-align: center;
+    font: italic normal bold 24px/85px Helvetica;
+    letter-spacing: 0px;
+    color: #707070;
+    text-transform: uppercase;
+    opacity: 1;
+    margin-left: 50px;
+}
+
+.Lotofacil {
+    top: 253px;
+    left: 130px;
+    width: 113px;
+    height: 50px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 2px solid #7F3992;
+    border-radius: 100px;
+    opacity: 1;
+    margin: 10px;
+}
+
+.LotofacilClicked {
+    top: 253px;
+    left: 130px;
+    width: 113px;
+    height: 50px;
+    background: #7F3992 0% 0% no-repeat padding-box;
+    border: 2px solid #7F3992;
+    border-radius: 100px;
+    opacity: 1;
+    margin: 10px;
+}
+
+.TxtLotofacil {
+    text-align: center;
+    font: italic normal bold 14px Helvetica;
+    letter-spacing: 0px;
+    color: #7F3992;
+    opacity: 1;
+}
+
+.TxtClicked {
+    text-align: center;
+    font: italic normal bold 14px Helvetica;
+    letter-spacing: 0px;
+    color: white;
+    opacity: 1;
+}
+
+.MegaSena {
+    top: 253px;
+    left: 130px;
+    width: 113px;
+    height: 50px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 2px solid #01AC66;
+    border-radius: 100px;
+    opacity: 1;
+    margin-right: 10px;
+}
+
+.MegaSenaClicked {
+    top: 253px;
+    left: 130px;
+    width: 113px;
+    height: 50px;
+    background: #01AC66 0% 0% no-repeat padding-box;
+    border: 2px solid #01AC66;
+    border-radius: 100px;
+    opacity: 1;
+    margin: 10px;
+}
+
+.TxtMegasena {
+    text-align: center;
+    font: italic normal bold 14px Helvetica;
+    letter-spacing: 0px;
+    color: #01AC66;
+    opacity: 1;
+}
+
+.Quina {
+    top: 253px;
+    left: 130px;
+    width: 113px;
+    height: 50px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 2px solid #F79C31;
+    border-radius: 100px;
+    opacity: 1;
+}
+
+.QuinaClicked {
+    top: 253px;
+    left: 130px;
+    width: 113px;
+    height: 50px;
+    background: #F79C31 0% 0% no-repeat padding-box;
+    border: 2px solid #F79C31;
+    border-radius: 100px;
+    opacity: 1;
+}
+
+.TxtQuina {
+    text-align: center;
+    font: italic normal bold 14px Helvetica;
+    letter-spacing: 0px;
+    color: #F79C31;
+    opacity: 1;
+}
+
+.SaveArea {
+    display: flex;
+    width: 500px;
+    height: 100px;
+    background: #F4F4F4 0% 0% no-repeat padding-box;
+    border: 1px solid #E2E2E2;
+    align-items: center;
+    justify-content: center;
+}
+
+.SaveButton {
+    display: flex;
+    align-items: center;
+    border: none;
+    overflow: visible;
+    background-color: transparent;
+    font: italic normal bold 35px/70px Helvetica;
+    color: #27C383;
+    cursor: pointer;
+}
+
+.Filter {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.Filter h2 {
+    text-align: center;
+    font: italic normal bold 24px Helvetica;
+    color: #707070;
+    margin-right: 45px;
+}
+
+.Filter h4 {
+    font: italic normal normal 17px Helvetica;
+    letter-spacing: 0px;
+    color: #868686;
+    margin-right: 20px;
+}
+
+.NewBet {
+    display: flex;
+    border: none;
+    overflow: visible;
+    align-items: center;
+    background-color: transparent;
+    color: #B5C401;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font: italic normal bold 24px Helvetica;
+    cursor: pointer;
+    margin-right: 200px;
+}
+
+.CartTotalTxt {
+    font: italic normal bold 24px Helvetica;
+    color: #707070;
+}
+
+.CartSpanTxt {
+    font: normal normal 300 24px Helvetica;
+    color: #707070;
+}
+
+.NavigationHome {
+    margin-top: 15px;
+    height: 53px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 23%;
+}

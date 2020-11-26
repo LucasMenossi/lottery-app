@@ -34,7 +34,6 @@ const Games = ({ selectedGame, cartValues, setCartValues, getGameType, totalPric
                 }), type: getGameType.type, price: getGameType.price, date: new Date()
             }])
             setTotalPrice(totalPrice + getGameType.price)
-            console.log("Cart values at games: ", cartValues);
             clearChoice()
         }
     }
@@ -44,7 +43,7 @@ const Games = ({ selectedGame, cartValues, setCartValues, getGameType, totalPric
             <div>
                 <p className={classes.TxtBet}>{getGameType?.description}</p>
                 <Button gameType={getGameType} arr={arr} setArr={setArr} />
-                <div style={{ display: "flex" }}>
+                <div style={{ display: "flex", marginTop: 20, marginBottom: 50 }}>
                     <div style={{ flex: 1 }}>
                         <button onClick={() => completeGame()} className={classes.BtnState} style={{ marginRight: 20 }}>Complete game</button>
                         <button onClick={() => clearChoice()} className={classes.BtnState}>Clear Game</button>
