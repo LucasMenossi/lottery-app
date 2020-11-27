@@ -4,9 +4,7 @@ import Button from '../Button/button'
 import classes from './games.module.css';
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 
-const Games = ({ selectedGame, cartValues, setCartValues, getGameType, totalPrice, setTotalPrice }) => {
-
-    const [arr, setArr] = useState([]);
+const Games = ({ cartValues, setCartValues, getGameType, totalPrice, setTotalPrice, arr, setArr }) => {
 
     const clearChoice = () => {
         setArr([])

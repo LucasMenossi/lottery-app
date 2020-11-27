@@ -39,9 +39,9 @@
     padding: 30px;
     border: none;
     width: 80%;
-    background-color: transparent;
+    background-color: transparent !important;
     font: italic normal bold 17px Helvetica;
-    color: #9D9D9D;
+    color: #9D9D9D !important;
 }
   
 .ForgetButton {

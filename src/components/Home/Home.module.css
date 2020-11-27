@@ -8,7 +8,6 @@
 }
 
 .Page {
-    display: flex;
     flex-direction: row;
     flex: 1;
 }
@@ -222,7 +221,7 @@
 
 .NewBetArea {
     display: flex;
-    flex: .34;
+    flex: .46;
     align-items: "center"
 }
 

@@ -30,12 +30,21 @@
 .Navigation2 {
     display: flex;
     flex-direction: row;
-    flex: 1;
+    flex: 1.6;
     font-size: 20px;
     justify-content: center;
+    align-items: center;
 }
 
 .Navigation button {
+    border: none;
+    overflow: visible;
+    background-color: transparent;
+    font: italic normal bold 20px Helvetica;
+    color: #707070;
+}
+
+.Navigation2 button {
     border: none;
     overflow: visible;
     background-color: transparent;

@@ -8,7 +8,6 @@
 }
 
 .Page {
-    display: flex;
     flex-direction: row;
     flex: 1;
 }
@@ -125,7 +124,7 @@
 
 .Cart {
     display: flex;
-    width: 500px;
+    width: 400px;
     min-height: 300px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-top: 2px solid #E2E2E2;
@@ -247,7 +246,7 @@
 
 .SaveArea {
     display: flex;
-    width: 500px;
+    width: 400px;
     height: 100px;
     background: #F4F4F4 0% 0% no-repeat padding-box;
     border: 1px solid #E2E2E2;
