@@ -1,10 +1,12 @@
-import classes from './GameClicked.module.css';
+import classes from './ListGames.module.css';
 import { types } from '../../api/api'
 
-const GameClicked = ({ selectedGame, setSelectedGame}) => {
+const ListGames = ({ selectedGame, setSelectedGame, arr, setArr}) => {
 
     const selectNewGame = (e) => {
         setSelectedGame(e.target.value)
+        if(e.target.value !== selectedGame)
+            setArr([])
     }
 
     return (
@@ -22,4 +24,4 @@ const GameClicked = ({ selectedGame, setSelectedGame}) => {
 
 }
 
-export default GameClicked;
+export default ListGames;

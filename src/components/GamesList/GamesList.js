@@ -2,7 +2,7 @@ import classes from './GamesList.module.css';
 import Games from '../Games/games'
 import Item from '../Item/Item';
 import { BiRightArrowAlt } from 'react-icons/bi'
-import GameClicked from '../GameClicked/GameClicked'
+import ListGames from '../ListGames/ListGames'
 import { useDispatch, useSelector } from 'react-redux';
 import { Creators as GitActions } from '../../store/ducks/git';
 import Header from "../Header/Header";
@@ -46,7 +46,7 @@ const GamesList = () => {
                                 <p className={classes.BetText}>NEW BET <span className={classes.GameText}>FOR {selectedGame.toUpperCase()}</span></p>
                                 <p className={classes.ChooseGame}>Choose a game</p>
                                 <div>
-                                    <GameClicked selectedGame={selectedGame} setSelectedGame={setSelectedGame} arr={arr} setArr={setArr} />
+                                    <ListGames selectedGame={selectedGame} setSelectedGame={setSelectedGame} arr={arr} setArr={setArr} />
                                 </div>
                                 <Games
                                     selectedGame={selectedGame}

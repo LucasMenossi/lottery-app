@@ -5,31 +5,33 @@ import { BiRightArrowAlt } from 'react-icons/bi'
 import { Link, useHistory } from 'react-router-dom'
 import { login } from '../../api/api'
 import NameApp from '../NameApp/NameApp'
-import { withFormik, Form, Field } from 'formik';
-import * as Yup from 'yup';
+import { withFormik, Form, Field, Formik } from 'formik';
+import * as yup from 'yup';
 
-const Authentication = (props) => {
+const Authentication = () => {
     let history = useHistory()
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
     const [loginError, setLoginError] = useState(false);
-    const [emptyValue, setEmptyValue] = useState(false);
 
-    const checkData = () => {
+    const checkData = (values) => {
+        const {email, password} = values
+        console.log("Values been received: ", password);
         if (email === login.email && password === login.password) {
             setLoginError(false)
-            setEmptyValue(false)
             localStorage.setItem("userEmail", email);
             history.push("/dashboard")
-        } else if (email === '' || password === '') {
-            setEmptyValue(true)
-            setLoginError(false)
         } else {
-            setEmptyValue(false)
             setLoginError(true)
         }
     }
-    const { touched, errors } = props;
+
+    const schema = yup.object().shape({
+        email: yup
+            .string()
+            .email('Invalid email')
+            .required('Email is required'),
+        password: yup.string().required('Password is required')
+    });
+
     return (
         <div style={{
             display: "flex", flexDirection: 'column', width: '100vw',
@@ -40,28 +42,45 @@ const Authentication = (props) => {
                 <div className={classes.LoginBox}>
                     <h4>Authentication</h4>
                     <div className={classes.LoginInputsContiner}>
-                        <Form>
-                            <div className={classes.LoginInputBox}>
-                                <Field type = "text" name = "email" value={email} onChange={({ target: { value } }) => setEmail(value)} className={classes.LoginInput} placeholder="Email" />
-                                {touched.email && errors.email && <span style={{ display: "flex", justifyContent: "center", color: "red" }}>{errors.email}</span>}
-                            </div>
-                            <div className={classes.LoginInputBox}>
-                                <Field type="password" name="password" value={password} onChange={({ target: { value } }) => setPassword(value)} className={classes.LoginInput} placeholder="Password" />
-                                {touched.password && errors.password && <span style={{ display: "flex", justifyContent: "center", color: "red" }}>{errors.password}</span>}
-                            </div>
-                        </Form>
-                        {loginError ? <p style={{ display: "flex", justifyContent: "center", color: "red" }}>*Wrong email or password.</p> : null}
-                        <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
-                            <Link to="reset-pass">
-                                <button className={classes.ForgetButton}>I forgot my password</button>
-                            </Link>
-                        </div>
-                        <div style={{ display: "flex", justifyContent: 'center'}}>
-                            <button className={classes.LoginButton} onClick={() => checkData()}>
-                                Log in
-                                <BiRightArrowAlt style={{ height: 40, width: 48 }} />
-                            </button>
-                        </div>
+                        <Formik
+                            initialValues={{ email: '', password: '' }}
+                            validationSchema={schema}
+                            validateOnChange={false}
+                            validateOnBlur={true}
+                            onSubmit={checkData}
+                        >
+                            {({
+                                values,
+                                errors,
+                                handleSubmit,
+                                handleBlur,
+                                handleChange,
+                                touched
+                            }) => (
+                                    <Form>
+                                        <div className={classes.LoginInputBox}>
+                                            <Field type="text" name="email" value={values.email} onBlur={handleBlur} onChange={handleChange} className={classes.LoginInput} placeholder="Email" />
+                                            {touched.email && errors.email && <span style={{ display: "flex", justifyContent: "center", color: "red" }}>{errors.email}</span>}
+                                        </div>
+                                        <div className={classes.LoginInputBox}>
+                                            <Field type="password" name="password" value={values.password} onBlur={handleBlur} onChange={handleChange} className={classes.LoginInput} placeholder="Password" />
+                                            {touched.password && errors.password && <span style={{ display: "flex", justifyContent: "center", color: "red" }}>{errors.password}</span>}
+                                        </div>
+                                        {loginError ? <p style={{ display: "flex", justifyContent: "center", color: "red" }}>*Wrong email or password.</p> : null}
+                                        <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
+                                            <Link to="reset-pass">
+                                                <button className={classes.ForgetButton}>I forgot my password</button>
+                                            </Link>
+                                        </div>
+                                        <div style={{ display: "flex", justifyContent: 'center' }}>
+                                            <button type="submit" className={classes.LoginButton} onClick={handleSubmit}>
+                                                Log in
+                                            <BiRightArrowAlt style={{ height: 40, width: 48 }} />
+                                            </button>
+                                        </div>
+                                    </Form>
+                                )}
+                        </Formik>
                     </div>
                     <div style={{ display: "flex" }}>
                         <Link to="register">
@@ -78,17 +97,4 @@ const Authentication = (props) => {
     )
 }
 
-const LoginFormik = withFormik({
-    mapPropsToValues: (props) => {
-        return {
-            email: props.email || '',
-            password: props.password || ''
-        }
-    },
-    validationSchema: Yup.object().shape({
-        email: Yup.string().email('Email not valid').required('Email is required'),
-        password: Yup.string().required('Password is required')
-    })
-})(Authentication)
-
-export default LoginFormik;
+export default Authentication;
